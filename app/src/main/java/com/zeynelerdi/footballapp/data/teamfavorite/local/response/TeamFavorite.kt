@@ -10,7 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "team_favorite")
 data class TeamFavorite(
     @PrimaryKey(autoGenerate = true)
-    val idTeam: Int,
+    val IddTeam: Int,
 
     @ColumnInfo(name = "strTeam")
     val strTeam: String,
@@ -25,5 +25,5 @@ data class TeamFavorite(
     val strLeague: String,
 
     @ColumnInfo(name = "idLeague")
-    val idLeague: String
+    val IddLeague: String
 ) : Parcelable

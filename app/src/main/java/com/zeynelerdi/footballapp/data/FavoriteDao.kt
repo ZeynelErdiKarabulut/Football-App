@@ -10,7 +10,7 @@ import io.reactivex.Single
 
 @Dao
 abstract class FavoriteDao {
-    @Query("SELECT * FROM match_favorite WHERE idEvent = :intId")
+    @Query("SELECT * FROM match_favorite WHERE IddEvent = :intId")
     abstract fun getFavoriteMatchById(intId: Int?): Single<List<MatchFavorite>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -19,10 +19,10 @@ abstract class FavoriteDao {
     @Query("SELECT * FROM match_favorite")
     abstract fun getListFavoriteMatch(): Single<List<MatchFavorite>>
 
-    @Query("DELETE FROM match_favorite WHERE idEvent = :intId")
+    @Query("DELETE FROM match_favorite WHERE IddEvent = :intId")
     abstract fun deleteFavoriteMatch(intId: Int?)
 
-    @Query("SELECT * FROM team_favorite WHERE idTeam = :intId")
+    @Query("SELECT * FROM team_favorite WHERE IddTeam = :intId")
     abstract fun getFavoriteTeamById(intId: Int?): Single<List<TeamFavorite>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -31,7 +31,7 @@ abstract class FavoriteDao {
     @Query("SELECT * FROM team_favorite")
     abstract fun getListFavoriteTeam(): Single<List<TeamFavorite>>
 
-    @Query("DELETE FROM team_favorite WHERE idTeam = :intId")
+    @Query("DELETE FROM team_favorite WHERE IddTeam = :intId")
     abstract fun deleteFavoriteTeam(intId: Int?)
 
 }
